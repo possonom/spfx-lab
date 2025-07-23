@@ -1,54 +1,61 @@
-/* eslint-env node */
-/* rules: 
-  - eslint: https://eslint.org/docs/latest/rules/  
-  - typescript: https://typescript-eslint.io/rules/
-  - react: https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-array-index-key.md
-*/
 module.exports = {
-    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended'],
-    parser: '@typescript-eslint/parser',
-    plugins: ['@typescript-eslint'],
-    root: true,
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": 12,
-      "sourceType": "module"
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
     },
-    "rules": {      
-      "no-var": "error",      
-      "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/no-var-requires": "warn",
-      "@typescript-eslint/no-shadow": "warn",
-      "@typescript-eslint/default-param-last": "warn",
-      "@typescript-eslint/semi": "warn",
-      "react/destructuring-assignment": "warn",
-      "react/no-unused-prop-types": "warn",
-      "react/no-unknown-property": "warn",
-      "react/no-array-index-key": "warn",
-      "react/jsx-no-useless-fragment": "warn",
-      "react/no-this-in-sfc": "error",
-      "react/no-unused-state": "error",
-      "react/jsx-pascal-case": "error",
-      "react/jsx-no-duplicate-props": "error"
-    },
-    "ignorePatterns": [
-      "*.js",
-      "**/coverage",
-      "**/dist",
-      "**/etc",
-      "**/lib",
-      "**/sharepoint",
-      "**/lib-amd",
-      "**/lib-commonjs",
-      "**/node_modules",
-      "**/temp",
-      "**/*.scss.ts"
-    ],
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    }    
-  };
+    project: './tsconfig.json'
+  },
+  plugins: [
+    '@typescript-eslint',
+    'react'
+  ],
+  extends: [
+    'eslint:recommended',
+    '@typescript-eslint/recommended',
+    'plugin:react/recommended'
+  ],
+  rules: {
+    // TypeScript specific rules
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/explicit-function-return-type': 'warn',
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/prefer-const': 'error',
+    '@typescript-eslint/no-var-requires': 'error',
+    
+    // React specific rules
+    'react/prop-types': 'off', // We use TypeScript for prop validation
+    'react/react-in-jsx-scope': 'off', // Not needed with React 17+
+    'react/jsx-uses-react': 'off', // Not needed with React 17+
+    'react/jsx-uses-vars': 'error',
+    'react/jsx-key': 'error',
+    'react/no-unescaped-entities': 'warn',
+    
+    // General rules
+    'no-console': 'warn',
+    'no-debugger': 'error',
+    'prefer-const': 'error',
+    'no-var': 'error',
+    'eqeqeq': 'error',
+    'curly': 'error'
+  },
+  settings: {
+    react: {
+      version: '17.0.2'
+    }
+  },
+  env: {
+    browser: true,
+    es6: true,
+    node: true
+  },
+  ignorePatterns: [
+    'lib/**/*',
+    'temp/**/*',
+    'node_modules/**/*',
+    'gulpfile.js'
+  ]
+};

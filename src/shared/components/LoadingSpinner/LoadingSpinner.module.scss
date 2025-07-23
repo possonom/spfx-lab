@@ -1,0 +1,9 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  min-height: 100px;
+}

@@ -5,11 +5,27 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "declaration": true,
     "sourceMap": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@shared/*": ["shared/*"],
+      "@components/*": ["shared/components/*"],
+      "@services/*": ["shared/services/*"],
+      "@models/*": ["shared/models/*"],
+      "@utils/*": ["shared/utils/*"],
+      "@hooks/*": ["shared/hooks/*"],
+      "@constants/*": ["shared/constants/*"]
+    },
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@microsoft"
@@ -22,6 +38,15 @@
       "es6",
       "es2016",
       "dom",
+      "es2017.promise"
     ]
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "temp"
+  ]
 }
