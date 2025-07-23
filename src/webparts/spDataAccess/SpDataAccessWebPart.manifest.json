@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "9ff6ad8f-9ce4-43f3-a52e-bacda51383e6",
+  "alias": "SpDataAccessWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", 
+    "group": { "default": "Other" },
+    "title": { "default": "SPDataAccess", "en-US": "SPDataAccess" },
+    "description": { "default": "SPDataAccess description", "en-US": "SPDataAccess description" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "SPDataAccess",
+       "logLevel": "2"
+    }
+  }]
+}
