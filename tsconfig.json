@@ -16,6 +16,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "exactOptionalPropertyTypes": true,
+    "allowJs": true,
+    "esModuleInterop": false,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
     "paths": {
       "@shared/*": ["shared/*"],
@@ -32,7 +36,10 @@
     ],
     "types": [
       "es6-promise",
-      "webpack-env"
+      "webpack-env",
+      "node",
+      "jest", 
+      "jsdom"
     ],
     "lib": [
       "es6",
@@ -47,6 +54,9 @@
   "exclude": [
     "node_modules",
     "lib",
-    "temp"
+    "dist",
+    "temp",
+    "**/*.test.ts",
+    "**/*.test.tsx"
   ]
 }
